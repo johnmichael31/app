@@ -6,6 +6,7 @@ $sql = "SELECT * FROM products";
 $result = $conn->query($sql);
 $products = array();
 
+
 //Check if there are any results
 if($result->num_rows > 0){
     // Output of data of each row
@@ -31,7 +32,7 @@ include '../includes/header.php';
                     <p class="card-text mb-2">Unit: <?php echo htmlspecialchars($item['unit']); ?></p>
                     <p class="card-text">Price: <?php echo htmlspecialchars($item['price_per_unit']); ?></p>
                     <button class="btn btn-primary">Add Item</button>
-                    <button class="btn btn-dark" style="color:white;">Order Item</button>
+                    <button class="btn btn-dark" style="color:white;" data-bs-toggle="modal" data-bs-target="#orderModal">Order Item</button>
                 </div>
             </div>
         </div>
@@ -44,5 +45,6 @@ include '../includes/header.php';
 
 <?php 
 include './modals/image_modal.php';
+include './modals/order_modal.php';
 include '../includes/footer.php';
 ?>
