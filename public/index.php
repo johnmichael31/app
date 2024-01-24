@@ -31,13 +31,26 @@ include '../includes/header.php';
                     <h5 class="card-title"><?php echo htmlspecialchars($item['name']); ?></h5>
                     <p class="card-text mb-2">Unit: <?php echo htmlspecialchars($item['unit']); ?></p>
                     <p class="card-text">Price: <?php echo htmlspecialchars($item['price_per_unit']); ?></p>
-                    <button class="btn btn-primary">Add Item</button>
-                    <button class="btn btn-dark" style="color:white;" data-bs-toggle="modal" data-bs-target="#orderModal">Order Item</button>
+                    <button class="btn btn-primary" onclick="addItemToCart('<?php echo htmlspecialchars($item['price_per_unit']); ?>')">Add Item</button>
+                    <button class="btn btn-dark" style="color:white;" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#orderModal"
+                    data-id="<?php echo htmlspecialchars($item['product_id']); ?>"
+                    data-name="<?php echo htmlspecialchars($item['name']); ?>"
+                    data-price="<?php echo htmlspecialchars($item['price_per_unit']); ?>"
+                    data-unit="<?php echo htmlspecialchars($item['unit']); ?>"
+                    data-image="<?php echo htmlspecialchars($item['image_url']); ?>"
+                    onclick="orderModal(this)"
+                    >Order Item</button>
                 </div>
             </div>
         </div>
         <?php endforeach; ?>
     </div>
+</div>
+
+<div class="text-end mt-4">
+    <h3>Total Cost: <span id="totalCost">0</span></h3>
 </div>
 
 

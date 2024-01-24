@@ -13,7 +13,7 @@
                 <a href="index.php" class="navbar-brand">Kiosk PHP</a>
                 <div class="navbar-nav">
                     <a href="index.php" class="nav-link">Product</a>
-                    <a href="order.php" class="nav-link">Order</a>
+                    <a href="orders.php" class="nav-link">Order</a>
                 </div>
             </div>
         </nav>
