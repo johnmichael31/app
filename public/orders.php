@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
 $conn->close();
 
 // Include the header template
-include '../template/header.php';
+include '../includes/header.php';
 ?>
 
 <div class="container mt-4">
@@ -73,5 +73,5 @@ include '../template/header.php';
 
 <?php
 // Include the footer template
-include '../template/footer.php';
+include '../includes/footer.php';
 ?>
